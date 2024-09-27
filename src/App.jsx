@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import AddTask from './AddTask.js';
-import TaskList from './TaskList.js';
+import AddTask from './AddTask.jsx';
+import TaskList from './TaskList.jsx';
 
-export default function TaskApp() {
+function TaskApp() {
   const [tasks, setTasks] = useState(initialTasks);
 
   function handleAddTask(text) {
@@ -44,6 +44,8 @@ export default function TaskApp() {
     </>
   );
 }
+
+export default TaskApp
 
 let nextId = 3;
 const initialTasks = [

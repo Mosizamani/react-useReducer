@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function TaskList({tasks, onChangeTask, onDeleteTask}) {
+function TaskList({tasks, onChangeTask, onDeleteTask}) {
   return (
     <ul>
       {tasks.map((task) => (
@@ -9,7 +9,7 @@ export default function TaskList({tasks, onChangeTask, onDeleteTask}) {
         </li>
       ))}
     </ul>
-  );
+  )
 }
 
 function Task({task, onChange, onDelete}) {
@@ -24,19 +24,19 @@ function Task({task, onChange, onDelete}) {
             onChange({
               ...task,
               text: e.target.value,
-            });
+            })
           }}
         />
         <button onClick={() => setIsEditing(false)}>Save</button>
       </>
-    );
+    )
   } else {
     taskContent = (
       <>
         {task.text}
         <button onClick={() => setIsEditing(true)}>Edit</button>
       </>
-    );
+    )
   }
   return (
     <label>
@@ -47,11 +47,13 @@ function Task({task, onChange, onDelete}) {
           onChange({
             ...task,
             done: e.target.checked,
-          });
+          })
         }}
       />
       {taskContent}
       <button onClick={() => onDelete(task.id)}>Delete</button>
     </label>
-  );
+  )
 }
+
+export default TaskList

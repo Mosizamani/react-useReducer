@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export default function AddTask({ onAddTask}) {
+function AddTask({ onAddTask}) {
     const [text, setText] = useState('')
 
     return (
@@ -8,7 +8,7 @@ export default function AddTask({ onAddTask}) {
             <input 
             placeholder="Add task..."
             value={text}
-            onChange={(event) => setText(event.target.value)}
+            onChange={(e) => setText(e.target.value)}
             />
             <button onClick={() => {
                 setText('')
@@ -19,3 +19,5 @@ export default function AddTask({ onAddTask}) {
         </>
     )
 }
+
+export default AddTask
